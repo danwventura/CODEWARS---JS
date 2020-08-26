@@ -88,7 +88,7 @@ function likes(names) {
   /*--------------------------------------------------------------------END OF SOLUTION----------------------------------------------------------------------------------*/
 
   /*
-    8/26/2020 - A LETTER FROM YOUR NIECE
+  -  8/26/2020 - A LETTER FROM YOUR NIECE -
 
     Your sweet 4 year old niece has sent you a letter, however she is a little bit of an odd ball, so it needs a bit of decoding. 
     You see she seems to love dinosars and often throws "trex" and "raptor" in mid sentence when she gets excited, and is convinced all vowels should be replaced by numbers (a=0, e=1, i=2, o=3, u=4).
