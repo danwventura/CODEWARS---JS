@@ -1,4 +1,36 @@
 /*
+    8/27/2020 - MOVIE CLERK
+
+    It's the academic year's end, fateful moment of your school report. The averages must be calculated. 
+    All the students come to you and entreat you to calculate their average for them. Easy ! You just need to write a script.
+    Return the average of the given array rounded down to its nearest integer.
+
+    The array will never be empty.
+
+    SOLUTION:
+*/
+
+function getAverage(marks){
+  let markCount = 0;
+  let markSum = 0;
+  marks.forEach((mark) => {
+    markCount++;
+    markSum += mark;
+  })
+    return Math.floor(markSum / markCount);
+}
+
+/* More Efficient Answer I Could Have Used */
+
+function getAverage(marks){
+  return Math.floor(marks.reduce((sum, x) => sum + x) / marks.length);
+}
+
+ /*--------------------------------------------------------------------END OF SOLUTION----------------------------------------------------------------------------------*/
+
+
+ 
+/*
     8/25/2020 - WHO LIKES IT?
 
     You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. 
@@ -52,3 +84,5 @@ function likes(names) {
       default: return `${a}, ${b} and ${others.length + 1} others like this`;
     }
   }
+
+  /*--------------------------------------------------------------------END OF SOLUTION----------------------------------------------------------------------------------*/
