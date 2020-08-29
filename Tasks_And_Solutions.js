@@ -134,3 +134,33 @@ function nonsense(str) {
 }
 
 /*--------------------------------------------------------------------END OF SOLUTION----------------------------------------------------------------------------------*/
+
+/*
+  8/28/2020 - EGG TALK
+
+  Insert an "egg" after each consonant.
+  If there are no consonants, there will be no eggs.
+  Argument will consist of a string with only alphabetic characters and possibly some spaces.
+
+  eggsample:
+
+  hello => heggeleggleggo
+
+  eggs => egegggeggsegg
+
+  SOLUTION:
+*/
+
+  function heggeleggleggo(word){
+    let charStringArray = word.toLowerCase().split("");
+    let regexRule = /[bcdfghjklmnpqrstvwxyz]/;
+    for(i = 0; i < charStringArray.length; i++){
+      if(charStringArray[i].match(regexRule)){
+        charStringArray[i] += "egg";
+      }
+    }
+    let finalString = charStringArray.join("");
+    return finalString;
+  }
+
+/*--------------------------------------------------------------------END OF SOLUTION----------------------------------------------------------------------------------*/
