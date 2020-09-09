@@ -207,3 +207,54 @@ function isAValidMessage(message){
 }
 
 /*--------------------------------------------------------------------END OF SOLUTION----------------------------------------------------------------------------------*/
+
+/*
+  9/9/2020 - FIND THE MIDDLE ELEMENT
+
+As a part of this Kata, you need to create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements.
+
+The input to the function will be an array of three distinct numbers (Haskell: a tuple).
+
+For example:
+
+gimme([2, 3, 1]) => 0
+2 is the number that fits between 1 and 3 and the index of 2 in the input array is 0.
+
+Another example (just to make sure it is clear):
+
+gimme([5, 10, 14]) => 1
+10 is the number that fits between 5 and 14 and the index of 10 in the input array is 1.
+
+  SOLUTION:
+*/
+
+var gimme = function (inputArray) {
+  let first = inputArray[0];
+  let second = inputArray[1];
+  let third = inputArray[2];
+  let middle;
+  
+  switch(true){
+    case second > first && first > third || third > first && first > second:
+      middle = inputArray.indexOf(first);
+      break;
+    
+    case first > second && second > third || third > second && second > first:
+      middle = inputArray.indexOf(second);
+      break;
+      
+    case first > third && third > second || third > first && second > third:
+      middle = inputArray.indexOf(third);
+      break;
+  }
+  return middle;
+};
+
+/* More efficient solution: */
+
+var gimme = function (inputArray) {
+  return inputArray.indexOf(inputArray.concat().sort(function(a, b) { return a - b })[1])
+};
+
+
+/*--------------------------------------------------------------------END OF SOLUTION----------------------------------------------------------------------------------*/
