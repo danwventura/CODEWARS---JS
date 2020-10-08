@@ -258,3 +258,57 @@ var gimme = function (inputArray) {
 
 
 /*--------------------------------------------------------------------END OF SOLUTION----------------------------------------------------------------------------------*/
+
+/*
+  10/7/2020 - SIMPLE STRING REVERSAL
+
+  In this Kata, we are going to reverse a string while maintaining the spaces (if any) in their original place.
+
+  For example:
+
+  solve("our code") = "edo cruo"
+  -- Normal reversal without spaces is "edocruo". 
+  -- However, there is a space at index 3, so the string becomes "edo cruo"
+
+  solve("your code rocks") = "skco redo cruoy". 
+  solve("codewars") = "srawedoc"
+
+  SOLUTION:
+*/
+
+function solve(str){
+  let charArray = str.replace(/\s/g, '').split("");
+  let reverseArray = [];
+  let spaceIndexes = [];
+  let spaceRegex = /\s/g;
+  let length = charArray.length - 1;
+  while ((match = spaceRegex.exec(str)) != null) {
+    spaceIndexes.push(match.index);
+  }
+  for(i = length; i >= 0 ; i--){
+    reverseArray.push(charArray[i]);
+  }
+  if(spaceIndexes.length !== 0){
+    for(i = 0; i < spaceIndexes.length; i++){
+      reverseArray.splice(spaceIndexes[i],0, " ");
+    }
+  }
+  let reversedString = reverseArray.join("");
+  return reversedString;
+}
+
+/* More efficient solution: */
+
+function solve(str){
+
+  var s = "";
+  for (let i = str.length - 1; i >= 0; i--)
+  {
+    if (str[i] != " ")        s += str[i];
+    if (str[s.length] == " ") s += str[s.length];
+  }
+  return s;
+
+}
+
+/*--------------------------------------------------------------------END OF SOLUTION----------------------------------------------------------------------------------*/
